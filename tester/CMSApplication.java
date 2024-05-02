@@ -16,7 +16,7 @@ public class CMSApplication {
 			// init D.S
 			List<Customer> customerList = new ArrayList<>();// size : 0 , init cap 10
 			while (!exit) {
-				System.out.println("Options : 1. Customer Sign Up \n 2. Display all \n 3 LogIn \n 4 Change Password \n 0. Exit");
+				System.out.println("Options : 1. Customer Sign Up \n 2. Display all \n 3 LogIn \n 4 Change Password \n 5 Umnsubscribe \n 0. Exit");
 				System.out.println("Choose");
 				try {
 					switch (sc.nextInt()) {
@@ -54,6 +54,12 @@ public class CMSApplication {
 						String newPass=sc.next();
 						customer.setPassword(newPass);
 						System.out.println("New Password is set sucessfully ");
+						break;
+						
+					case 5:
+						System.out.println("Enter Email to un subscribe ");
+						String msg =CMSutils.deleteCustomer(sc.next(),customerList);
+						System.out.println(msg+"You have Unsubscribed !!!");
 						break;
 
 					case 0:

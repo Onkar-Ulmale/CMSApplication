@@ -22,6 +22,17 @@ public class CMSutils {
 		throw new CMSException("Invalid Password !!!!!");
 	}
 
+	public static String deleteCustomer(String email, List<Customer> customerList) throws CMSException
+	{
+
+		int index=customerList.indexOf(new Customer(email));
+		if(index ==-1)
+			throw new CMSException("Invalid Email!!!!");
+		
+		
+		return "Removed Details of "+customerList.remove(index).getFirstName();
+	}
+
 	
 
 }

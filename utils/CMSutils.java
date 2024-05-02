@@ -8,7 +8,6 @@ import com.app.custom_exception.CMSException;
 public class CMSutils {
 
 	public static Customer loginTheCustomer(String e, String p, List<Customer> list) throws CMSException {
-		// TODO Auto-generated method stub
 		Customer cust=new Customer(e);
 		int index=list.indexOf(cust);
 		if(index==-1)
